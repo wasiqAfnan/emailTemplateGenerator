@@ -5,6 +5,6 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/api/email', emailRoutes);
+app.use('/api/email', emailRoutes);
 
 export default app;
