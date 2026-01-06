@@ -18,7 +18,6 @@ export const generateEmail = async (req, res) => {
     // Log the response
     log("info", "Response sent", {
       statusCode: 200,
-      aiResponseTimeMs: result.responseTimeMs,
       response: responsePayload
     });
 

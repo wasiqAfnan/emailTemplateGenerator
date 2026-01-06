@@ -22,8 +22,8 @@ const nonNumericString = z
   .refine((val) => !/^[0-9]+$/.test(val), {
     message: "Field cannot be only numbers",
   })
-  .refine((val) => val.length <= 500, {
-    message: "Field cannot exceed 500 characters",
+  .refine((val) => val.length <= 300, {
+    message: "Field cannot exceed 300 characters",
   });
 
 export const emailRequestSchema = z.object({
