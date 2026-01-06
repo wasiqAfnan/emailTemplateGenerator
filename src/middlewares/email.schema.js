@@ -1,5 +1,18 @@
 import { z } from "zod";
 
+export const TONE_ENUM = [
+  "friendly",
+  "professional",
+  "formal",
+  "polite",
+  "neutral",
+  "confident",
+  "supportive",
+  "urgent",
+  "apologetic",
+  "informative",
+];
+
 const nonNumericString = z
   .string()
   .transform((val) => val.trim())
@@ -18,5 +31,9 @@ export const emailRequestSchema = z.object({
   recipient_name: nonNumericString.refine((val) => val.length <= 50, {
     message: "Recipient name cannot exceed 50 characters",
   }),
-  tone: nonNumericString.transform((val) => val.toLowerCase()),
+  tone: nonNumericString
+    .transform((val) => val.toLowerCase())
+    .refine((val) => TONE_ENUM.includes(val), {
+      message: `tone must be one of: ${TONE_ENUM.join(", ")}`,
+    }),
 });

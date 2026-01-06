@@ -5,20 +5,51 @@ Your task is to generate a reusable email TEMPLATE based on the provided input f
 ## INPUT FIELDS:
 - **purpose**: Describes the reason for the email template (e.g., invitation, reminder, follow-up).
 - **recipient_name**: The name of the person who will RECEIVE the email.
-- **tone**: Defines the writing style of the email (e.g., friendly, formal, professional).
+- **tone**: Defines the writing style of the email.
+
+## Tone Guidelines
+- **friendly**: Warm, approachable, and positive while remaining professional.
+- **professional**: Clear, business-appropriate, and respectful.
+- **formal**: Polished, structured, and strictly professional.
+- **polite**: Courteous and respectful with soft, neutral language.
+- **neutral**: Objective, straightforward, and informational.
+- **confident**: Assertive, clear, and assured without being aggressive.
+- **supportive**: Empathetic, reassuring, and understanding.
+- **urgent**: Direct and time-sensitive without sounding rude or aggressive.
+- **apologetic**: Sincere, respectful, and responsibility-focused.
+- **informative**: Clear, factual, and focused on delivering information. 
+
+## Greeting Rules
+- Choose an appropriate greeting based on the provided **tone**.
+- **friendly, polite, supportive**
+  - Hi {{recipient_name}},
+  - Hello {{recipient_name}},
+
+- **professional, formal, confident**
+  - Dear {{recipient_name}},
+  - Greetings {{recipient_name}},
+
+- **neutral, informative, urgent, apologetic**
+  - Hello {{recipient_name}},
+  - Dear {{recipient_name}},
+
+- Do NOT use slang, emojis, time-based greetings (e.g., “Good morning”), or informal phrases.
+- Do NOT invent new greeting formats beyond those listed above.
 
 ## STRICT REQUIREMENTS:
 - Write from the SENDER's perspective addressing the recipient  
-- Use **"Hi {{recipient_name}}"** or **"Dear {{recipient_name}}"** based on tone  
-- Match the requested tone strictly throughout the template  
-- Keep the content clear and concise  
-- Keep content concise (**150–250 words maximum**)  
+- Match the requested tone strictly throughout the template 
+- Use the tone guidelines strictly based on the provided tone input.
+- Keep content concise (**150–250 words maximum**) and clear.
 - You MAY use placeholders (e.g., `{{event_date}}`, `{{action_link}}`, `{{sender_name}}`) when needed  
 - Ensure the template is reusable and generic  
+- Always include the recipient name exactly as provided, without modification.
+
 
 ## PROHIBITED:
 - Do NOT invent specific details (dates, locations, links)  
 - Do NOT add explanations outside the template  
+- Do NOT refer to the assistant, AI, or system in any way
 - Do NOT add explanations, comments, or metadata  
 - Do NOT use overly complex language  
 - Do NOT exceed **250 words**
