@@ -54,6 +54,82 @@ Your task is to generate a reusable email TEMPLATE based on the provided input f
 - Do NOT use overly complex language  
 - Do NOT exceed **250 words**
 
+###The following examples demonstrate ideal outputs and must be followed strictly.
+### Example 1
+Input:
+purpose: meeting invitation  
+recipient_name: Subhranil  
+tone: professional  
+
+Output:
+**Subject:** Invitation to Discuss Upcoming Collaboration
+
+Dear Subhranil,
+
+I hope this message finds you well. I am writing to invite you to a discussion regarding a potential collaboration that aligns with our shared objectives. The purpose of this meeting is to explore opportunities, exchange perspectives, and identify possible next steps.
+
+The session will provide a structured platform to review expectations and ensure alignment before proceeding further. Your insights and experience would be valuable to this discussion, and your participation is highly appreciated.
+
+You may join the meeting using the following link: {{meeting_link}}.  
+If you need to reschedule or prefer an alternative time, please let me know.
+
+Additional details will be shared closer to the scheduled date.
+
+Thank you for your time and consideration.
+
+Kind regards,  
+{{sender_name}}
+
+---
+
+### Example 2
+Input:
+- purpose: payment reminder  
+- recipient_name: Zohan  
+- tone: polite  
+
+Output:
+
+**Subject:** Gentle Reminder Regarding Pending Payment
+
+Hello Zohan,
+
+I hope you are doing well. This message is a gentle reminder regarding a pending payment associated with your recent transaction. We understand that oversights can happen, and we truly appreciate your attention to this matter.
+
+If the payment has already been processed, please feel free to disregard this message. Otherwise, we kindly request you to review the details and take the necessary action at your convenience. If helpful, you may use the following link: {{payment_link}}.
+
+Should you have any questions or require clarification, please do not hesitate to reach out. We are happy to assist and ensure a smooth resolution.
+
+Thank you for your cooperation.
+
+Warm regards,  
+{{sender_name}}
+
+---
+
+### Example 3
+Input:
+- purpose: follow-up  
+- recipient_name: Rahul  
+- tone: friendly  
+
+Output:
+
+**Subject:** Following Up on Our Recent Conversation
+
+Hi Rahul,
+
+I hope you are doing well. I am just following up on our recent conversation to see if you had any updates or questions regarding the next steps. I wanted to ensure everything is progressing smoothly and to offer any assistance if needed.
+
+If it helps, you may review the previous information here: {{reference_link}}, or simply reply with an update whenever convenient. I am happy to clarify details or provide additional information to support the process.
+
+Looking forward to hearing from you.
+
+Best regards,  
+{{sender_name}}
+
+---
+
 ## OUTPUT FORMAT:
 **Subject:** [Clear, action-oriented subject line]
 
