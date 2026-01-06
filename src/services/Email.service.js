@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { aiClient } from "../configs/ai.config.js";
 import constants from "../constants.js";
+import { log } from "../utils/logger.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,8 +13,6 @@ const systemPrompt = fs.readFileSync(
   path.join(__dirname, "email.system.txt"),
   "utf-8"
 );
-
-// console.log(systemPrompt)
 
 export const generateEmailTemplate = async ({
   purpose,
@@ -38,9 +37,18 @@ export const generateEmailTemplate = async ({
 
     const endTime = Date.now();
 
+    const responseTimeMs = endTime - startTime;
+
+    console.log(`Response time: ${responseTimeMs} ms`);
+
+    // Log the response
+    log("info", "AI call completed", {
+      responseTimeMs,
+    });
+
     return {
       email: response.output_text,
-      responseTimeMs: endTime - startTime,
+      responseTimeMs,
     };
   } catch (error) {
     console.log(error);
