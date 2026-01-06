@@ -299,10 +299,17 @@ Create a `.env` file using the following structure:
 ```env
 PORT=8080
 OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_API_MODEL=gpt-3.5-turbo (prefrred model)
+OPENAI_API_MODEL=gpt-3.5-turbo
 ```
-
 ---
+
+## Models Tested & Recommendation
+
+I have tested multiple OpenAI models to compare latency and output quality.
+
+**Observation / Recommendation:**
+Among the models tested, **`gpt-3.5-turbo`** provided the best balance of **speed + response quality** for this assignment (fast responses with reliable, well-structured templates). Use `gpt-3.5-turbo` as the default for typical usage; switch to a `gpt-4` variant only if you need **higher-quality text** and can accept **increased latency and cost**.
+
 
 ## How to Run the Project
 
