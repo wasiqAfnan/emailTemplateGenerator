@@ -62,3 +62,7 @@
 
 {"timestamp":"2026-01-06T15:51:10.557Z","level":"info","message":"Incoming request","method":"POST","path":"/api/email/generate","body":{"purpose":"Follow-up email","recipient_name":"98765","tone":"professional"}}
 {"timestamp":"2026-01-06T15:51:10.559Z","level":"error","message":"Validation failed","issues":[{"field":"recipient_name","message":"Field cannot be only numbers"}]}
+
+{"timestamp":"2026-01-06T16:46:35.560Z","level":"info","message":"Incoming request","method":"POST","path":"/api/email/generate","body":{"purpose":"Follow-up email","recipient_name":"wasiq","tone":"formal"}}
+{"timestamp":"2026-01-06T16:46:38.498Z","level":"info","message":"AI call completed","responseTimeMs":2932}
+{"timestamp":"2026-01-06T16:46:38.500Z","level":"info","message":"Response sent","statusCode":200,"response":{"success":true,"data":{"email":"**Subject:** Following Up on Previous Discussion\n\nDear Wasiq,\n\nI trust this email finds you well. I am reaching out to follow up on our recent discussion and to ensure that the points we covered are progressing as planned. Your insights and input during our conversation were invaluable, and I would appreciate any updates or feedback you might have at this stage.\n\nShould you require any further clarification or support moving forward, please do not hesitate to reach out. Your collaboration is essential to the success of our shared goals, and I look forward to continuing our partnership.\n\nThank you for your attention to this matter.\n\nWarm regards,  \n{{sender_name}}","responseTimeMs":2932}}}

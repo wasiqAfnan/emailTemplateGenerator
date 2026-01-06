@@ -50,7 +50,7 @@ EMAILTEMPLATEGENERATOR
 │   │   └── email.routes.js
 │   │
 │   ├── services/
-│   │   ├── Email.service.js
+│   │   ├── email.service.js
 │   │   └── email.system.txt
 │   │
 │   ├── utils/
