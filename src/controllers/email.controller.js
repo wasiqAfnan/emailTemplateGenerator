@@ -1,4 +1,4 @@
-import { generateEmailTemplate } from "../services/Email.service.js";
+import { generateEmailTemplate } from "../services/email.service.js";
 import { emailRequestSchema } from "../middlewares/email.schema.js";
 import { ZodError } from "zod";
 import { log } from "../utils/logger.js";
