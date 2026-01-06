@@ -24,7 +24,7 @@ export const generateEmail = async (req, res) => {
       });
     }
 
-    console.error("Email generation error:", error.message);
+    console.log("Email generation error:", error.message);
 
     return res.status(500).json({
       success: false,

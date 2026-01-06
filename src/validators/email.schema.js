@@ -8,10 +8,15 @@ const nonNumericString = z
   })
   .refine((val) => !/^[0-9]+$/.test(val), {
     message: "Field cannot be only numbers",
+  })
+  .refine((val) => val.length <= 500, {
+    message: "Field cannot exceed 500 characters",
   });
 
 export const emailRequestSchema = z.object({
   purpose: nonNumericString,
-  recipient_name: nonNumericString,
+  recipient_name: nonNumericString.refine((val) => val.length <= 50, {
+    message: "Recipient name cannot exceed 50 characters",
+  }),
   tone: nonNumericString.transform((val) => val.toLowerCase()),
 });

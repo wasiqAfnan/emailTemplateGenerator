@@ -13,30 +13,37 @@ const systemPrompt = fs.readFileSync(
   "utf-8"
 );
 
+// console.log(systemPrompt)
+
 export const generateEmailTemplate = async ({
   purpose,
   recipient_name,
   tone,
 }) => {
-  const startTime = Date.now();
+  try {
+    const startTime = Date.now();
 
-  const response = await aiClient.chat.completions.create({
-    model: constants.OPENAI_API_MODEL,
-    messages: [
-      { role: "system", content: systemPrompt },
-      {
-        role: "user",
-        content: `Purpose: ${purpose}
+    const response = await aiClient.responses.create({
+      model: constants.OPENAI_API_MODEL,
+      input: [
+        { role: "system", content: systemPrompt },
+        {
+          role: "user",
+          content: `Purpose: ${purpose}
                 Recipient Name: ${recipient_name}
                 Tone: ${tone}`,
-      },
-    ],
-  });
+        },
+      ],
+    });
 
-  const endTime = Date.now();
+    const endTime = Date.now();
 
-  return {
-    email: response.choices[0].message.content.trim(),
-    responseTimeMs: endTime - startTime,
-  };
+    return {
+      email: response.output_text,
+      responseTimeMs: endTime - startTime,
+    };
+  } catch (error) {
+    console.log(error);
+    throw error; // handled by the controller
+  }
 };
