@@ -10,17 +10,20 @@ export const generateEmail = async (req, res) => {
 
     const result = await generateEmailTemplate(parsedData);
 
+    const responsePayload = {
+      success: true,
+      data: result,
+    };
+
     // Log the response
     log("info", "Response sent", {
       statusCode: 200,
       aiResponseTimeMs: result.responseTimeMs,
+      response: responsePayload
     });
 
     // Return the response
-    return res.status(200).json({
-      success: true,
-      data: result,
-    });
+    return res.status(200).json(responsePayload);
   } catch (error) {
     // Handle Zod validation errors FIRST
     if (error instanceof ZodError) {

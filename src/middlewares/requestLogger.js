@@ -5,7 +5,7 @@ export const requestLogger = (req, res, next) => {
     method: req.method,
     path: req.originalUrl,
     body: req.body,
-  });
+  }, true);
 
   next();
 };

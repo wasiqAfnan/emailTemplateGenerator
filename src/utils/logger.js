@@ -8,7 +8,7 @@ if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
 }
 
-export const log = (level, message, meta = {}) => {
+export const log = (level, message, meta = {}, addNewLine = false) => {
   const entry = JSON.stringify({
     timestamp: new Date().toISOString(),
     level,
@@ -16,5 +16,7 @@ export const log = (level, message, meta = {}) => {
     ...meta,
   });
 
-  fs.appendFileSync(logFile, entry + "\n");
+  const finalLog = addNewLine ? `\n${entry}` : entry;
+
+  fs.appendFileSync(logFile, finalLog + "\n");
 };
